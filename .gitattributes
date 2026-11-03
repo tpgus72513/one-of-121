@@ -1,0 +1,6 @@
+# 줄바꿈을 LF로 통일 (Windows·Mac 섞여 있어도 diff가 깨끗하게)
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.glb binary
+*.pdf binary
