@@ -15,11 +15,13 @@
 git clone https://github.com/tpgus72513/one-of-121.git
 cd one-of-121
 npm install
-cp .env.example .env.local   # 값은 팀 단톡방에서 받아서 채운다
+cp .env.example .env.local   # 값은 Supabase 대시보드에서 직접 복사 (아래 참고)
 npm run dev                   # http://localhost:3000
 ```
 
 > Windows라면 OneDrive 폴더(바탕 화면·문서) **밖**에 clone 한다 (예: `C:\dev`). `node_modules` 동기화 때문에 느려진다.
+
+> **키 받는 법:** Supabase 프로젝트에 팀원으로 초대받은 뒤 대시보드 Project Settings → API 에서 각자 복사한다. `SUPABASE_SERVICE_ROLE_KEY`는 DB 전체 권한이라 단톡방에 붙이지 않는다. 배포용 값은 Vercel 환경변수에만 넣는다.
 
 ## 작업 흐름
 
