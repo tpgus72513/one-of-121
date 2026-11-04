@@ -2,6 +2,7 @@
 
 import { useRef, useState, type PointerEvent } from "react";
 import type { Message } from "./deck";
+import { display, sticker } from "./theme";
 
 const SWIPE_THRESHOLD = 100; // 이만큼(px) 끌어야 답으로 인정
 
@@ -11,7 +12,7 @@ interface SwipeCardProps {
   onSwipe: (saysPhishing: boolean) => void;
 }
 
-// 문자 카드 한 장 + 좌우로 끄는 기능. 실제 폰 문자 화면처럼 보이게 꾸몄다.
+// 문자 카드 한 장 + 좌우로 끄는 기능.
 // pointer 이벤트는 마우스·터치·펜을 하나로 묶은 이벤트라서, 이것만 쓰면 PC와 폰이 둘 다 된다.
 export default function SwipeCard({ message, onSwipe }: SwipeCardProps) {
   const [dragX, setDragX] = useState(0); // 카드가 원래 자리에서 옆으로 얼마나 움직였나(px)
@@ -23,8 +24,10 @@ export default function SwipeCard({ message, onSwipe }: SwipeCardProps) {
   function handleDown(e: PointerEvent<HTMLDivElement>) {
     startX.current = e.clientX;
     setDragging(true);
-    // 손가락이 카드 밖으로 나가도 계속 이 카드가 이벤트를 받게 한다
-    e.currentTarget.setPointerCapture(e.pointerId);
+    // 손가락이 카드 밖으로 나가도 계속 이 카드가 이벤트를 받게 한다 (실패해도 드래그는 되게)
+    try {
+      e.currentTarget.setPointerCapture(e.pointerId);
+    } catch {}
   }
 
   // 2) 움직일 때: 시작 위치와의 차이만큼 카드를 옮긴다
@@ -48,14 +51,15 @@ export default function SwipeCard({ message, onSwipe }: SwipeCardProps) {
 
   // 얼마나 밀었는지를 -1 ~ 1 로 바꾼 값. 카드 기울기·도장 진하기에 쓴다.
   const tilt = Math.max(-1, Math.min(1, dragX / SWIPE_THRESHOLD));
+  const savedContact = !/^[+0-9]/.test(message.sender); // 숫자로 시작하면 저장 안 된 번호
 
   return (
     <div
-      className="absolute inset-0 flex cursor-grab touch-pan-y flex-col overflow-hidden rounded-3xl bg-white text-slate-900 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.6)] active:cursor-grabbing"
+      className={`absolute inset-0 flex cursor-grab touch-pan-y flex-col overflow-hidden rounded-[22px] bg-white active:cursor-grabbing ${sticker}`}
       style={{
-        transform: `translateX(${dragX}px) rotate(${tilt * 8}deg)`,
-        // 끄는 중엔 손을 바로 따라오게, 놓으면 부드럽게 돌아가게
-        transition: dragging ? "none" : "transform 0.25s cubic-bezier(.2,.8,.2,1)",
+        transform: `translateX(${dragX}px) rotate(${tilt * 10}deg)`,
+        // 끄는 중엔 손을 바로 따라오게, 놓으면 통통 튀며 돌아가게
+        transition: dragging ? "none" : "transform 0.3s cubic-bezier(.3,1.6,.5,1)",
       }}
       onPointerDown={handleDown}
       onPointerMove={handleMove}
@@ -63,39 +67,38 @@ export default function SwipeCard({ message, onSwipe }: SwipeCardProps) {
       onPointerCancel={handleUp}
       onLostPointerCapture={handleUp}
     >
-      {/* 문자 앱 윗부분: 보낸 사람 */}
-      <div className="flex items-center gap-3 border-b border-slate-100 px-5 py-4">
-        <Avatar sender={message.sender} />
-        <div className="min-w-0">
-          <p className="truncate font-bold">{message.sender}</p>
-          <p className="text-xs text-slate-400">문자 메시지 · 방금 전</p>
+      {/* 위: 보낸 사람 */}
+      <div className="flex items-center gap-3 border-b-[2.5px] border-black bg-[#FFE45C] px-4 py-3">
+        <div
+          className={`flex size-10 shrink-0 items-center justify-center rounded-full border-[2.5px] border-black text-lg font-black ${
+            savedContact ? "bg-[#7CA8FF]" : "bg-neutral-200"
+          }`}
+        >
+          {savedContact ? message.sender[0] : "?"}
         </div>
+        <div className="min-w-0 flex-1">
+          <p className="truncate font-black">{message.sender}</p>
+          <p className="text-xs font-semibold text-black/60">
+            {savedContact ? "문자 메시지" : "저장되지 않은 번호"} · 지금
+          </p>
+        </div>
+        {message.school && (
+          <span className="shrink-0 -rotate-6 rounded-md border-2 border-black bg-white px-1.5 py-0.5 text-[11px] font-black">
+            세종캠
+          </span>
+        )}
       </div>
 
       {/* 말풍선 */}
-      <div className="flex-1 bg-slate-50 px-4 py-5">
-        <div className="w-fit max-w-[92%] rounded-2xl rounded-tl-md bg-white px-4 py-3 text-[15px] leading-relaxed break-all shadow-sm ring-1 ring-slate-100">
+      <div className="flex-1 bg-[#F4F1EA] px-4 py-5">
+        <div className="w-fit max-w-[94%] rounded-2xl rounded-tl-sm border-2 border-black bg-white px-4 py-3 text-[15px] leading-relaxed font-medium break-all">
           <HighlightLinks text={message.body} />
         </div>
       </div>
 
       {/* 밀 때 나타나는 도장. tilt 만큼 진해진다 */}
-      <Stamp side="left" opacity={-tilt} />
-      <Stamp side="right" opacity={tilt} />
-    </div>
-  );
-}
-
-// 보낸 사람 동그라미. 전화번호면 사람 아이콘, 이름이면 첫 글자
-function Avatar({ sender }: { sender: string }) {
-  const isNumber = sender.startsWith("+");
-  return (
-    <div
-      className={`flex size-11 shrink-0 items-center justify-center rounded-full text-lg font-bold text-white ${
-        isNumber ? "bg-slate-400" : "bg-linear-to-br from-indigo-500 to-violet-500"
-      }`}
-    >
-      {isNumber ? "👤" : sender[0]}
+      <Stamp label="피싱임" color="bg-[#FF5C8A]" side="left" opacity={-tilt} />
+      <Stamp label="진짜임" color="bg-[#A6F04F]" side="right" opacity={tilt} />
     </div>
   );
 }
@@ -106,7 +109,7 @@ function HighlightLinks({ text }: { text: string }) {
   // split 에 괄호 있는 정규식을 넣으면, 잘린 조각과 링크가 번갈아 나온다 → 홀수 칸이 링크
   return text.split(LINK).map((part, i) =>
     i % 2 === 1 ? (
-      <span key={i} className="text-blue-600 underline underline-offset-2">
+      <span key={i} className="font-semibold text-[#2F5BFF] underline underline-offset-2">
         {part}
       </span>
     ) : (
@@ -115,18 +118,16 @@ function HighlightLinks({ text }: { text: string }) {
   );
 }
 
-function Stamp({ side, opacity }: { side: "left" | "right"; opacity: number }) {
-  const isLeft = side === "left";
+function Stamp(props: { label: string; color: string; side: "left" | "right"; opacity: number }) {
+  const left = props.side === "left";
   return (
     <div
-      className={`pointer-events-none absolute top-24 rounded-xl border-4 px-3 py-1 text-2xl font-black tracking-wider ${
-        isLeft
-          ? "right-5 rotate-12 border-rose-500 text-rose-500"
-          : "left-5 -rotate-12 border-emerald-500 text-emerald-500"
+      className={`${display.className} pointer-events-none absolute bottom-8 rounded-xl border-[3px] border-black px-4 py-1.5 text-3xl shadow-[3px_3px_0_#111] ${props.color} ${
+        left ? "right-4 rotate-[14deg]" : "left-4 -rotate-[14deg]"
       }`}
-      style={{ opacity: Math.max(0, opacity) }}
+      style={{ opacity: Math.max(0, props.opacity), scale: 0.8 + Math.max(0, props.opacity) * 0.2 }}
     >
-      {isLeft ? "피싱 🚨" : "안전 ✅"}
+      {props.label}
     </div>
   );
 }
