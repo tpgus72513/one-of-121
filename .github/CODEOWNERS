@@ -1,0 +1,20 @@
+# PR을 열면 바뀐 파일에 따라 리뷰어가 자동 지정된다 (돌아가며 리뷰, 기획서 9장).
+# 양동규(A) → 추현지(B) 코드 · 추현지(B) → 권세현(C) 코드 · 권세현(C) → 양동규(A) 코드
+# 아래쪽 줄이 위쪽 줄보다 우선한다.
+
+# 기본: C 영역(페이지·설정) → 추현지가 리뷰
+*                              @hyeonji16
+
+# A 영역(양동규) → 권세현이 리뷰
+/src/games/phishing/           @tpgus72513
+/src/campus/Player.tsx         @tpgus72513
+/src/app/api/plays/            @tpgus72513
+
+# B 영역(추현지) → 양동규가 리뷰
+/src/games/microscope/         @ydg138
+/src/campus/Building.tsx       @ydg138
+/src/campus/layout.json        @ydg138
+/src/app/api/result-card/      @ydg138
+
+# 셋이 같이 정하는 공통 규칙 → 둘 다
+/src/games/types.ts            @ydg138 @hyeonji16
