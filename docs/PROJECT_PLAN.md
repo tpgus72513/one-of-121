@@ -264,9 +264,9 @@ create table plays (
 
 | | ① 화면·인터랙션 | ② 3D 캠퍼스 | ③ 서버·DB·AI |
 |---|---|---|---|
-| **A** | 🔐 피싱 판별 게임 (스와이프·모바일 제스처) `games/phishing/` | 캐릭터 이동 — 키보드 + 모바일 조이스틱, 카메라 따라가기 `campus/Player.tsx` | Supabase `plays` 테이블·RLS + **`POST /api/plays`** (점수 검증·저장) |
-| **B** | 🧪 식중독균 찾기 게임 (blur·좌표 판정) `games/microscope/` | 건물 — 상자·이름표·입구 판정·"준비 중" 표시 `campus/Building.tsx`, `layout.json` | **`POST /api/result-card`** — LLM 프롬프트, 실패 시 기본 문구 |
-| **C** | 게임 실행기(타이머·`onFinish`·`registry`) + 랜딩·결과·랭킹 페이지 + 결과 카드 이미지 저장 | 3D 뼈대 — Canvas·땅·조명·Next.js에 3D 불러오기 `campus/Scene.tsx` (+ 11/5 대비 2D 지도 대체안) | 랭킹 SQL (학과별 평균) + `departments.json` 세종캠 학과 목록 + Vercel 배포·환경변수 |
+| **A 양동규** | 🔐 피싱 판별 게임 (스와이프·모바일 제스처) `games/phishing/` | 캐릭터 이동 — 키보드 + 모바일 조이스틱, 카메라 따라가기 `campus/Player.tsx` | Supabase `plays` 테이블·RLS + **`POST /api/plays`** (점수 검증·저장) |
+| **B 추현지** | 🧪 식중독균 찾기 게임 (blur·좌표 판정) `games/microscope/` | 건물 — 상자·이름표·입구 판정·"준비 중" 표시 `campus/Building.tsx`, `layout.json` | **`POST /api/result-card`** — LLM 프롬프트, 실패 시 기본 문구 |
+| **C 권세현** | 게임 실행기(타이머·`onFinish`·`registry`) + 랜딩·결과·랭킹 페이지 + 결과 카드 이미지 저장 | 3D 뼈대 — Canvas·땅·조명·Next.js에 3D 불러오기 `campus/Scene.tsx` (+ 11/5 대비 2D 지도 대체안) | 랭킹 SQL (학과별 평균) + `departments.json` 세종캠 학과 목록 + Vercel 배포·환경변수 |
 
 **이렇게 나눈 이유**
 - A·B는 게임이 무거운 대신 3D·서버 작업은 한 덩어리씩만 맡는다. C는 게임이 없는 대신 페이지 여러 개와 3D 뼈대를 맡는다.
@@ -311,9 +311,9 @@ create table plays (
 ### ⏳ 미정 — 팀 논의 필요
 1. 보안 게임: **피싱 판별(추천)** vs 비밀번호 크래킹
 2. 식품 게임: **식중독균 찾기(추천)** vs 발효 컨트롤 vs 위생 점검관
-3. 역할표의 A·B·C에 누구를 넣을지 (9장)
+3. ~~역할표의 A·B·C에 누구를 넣을지~~ → A 양동규 · B 추현지 · C 권세현 (11/4 확정)
 4. ERICA 지원 여부 (마감 11/1)
-5. 세종캠 학과 전체 목록 + 각 학과 건물 (직접 확인)
+5. ~~세종캠 학과 전체 목록~~ → `departments.json`에 36개 입력 (11/4) · 각 학과 건물은 아직 확인 필요
 6. 팀 이름 정하기
 
 ---

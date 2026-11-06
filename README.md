@@ -15,11 +15,13 @@
 git clone https://github.com/tpgus72513/one-of-121.git
 cd one-of-121
 npm install
-cp .env.example .env.local   # 값은 팀 단톡방에서 받아서 채운다
+cp .env.example .env.local   # 값은 Supabase 대시보드에서 직접 복사 (아래 참고)
 npm run dev                   # http://localhost:3000
 ```
 
 > Windows라면 OneDrive 폴더(바탕 화면·문서) **밖**에 clone 한다 (예: `C:\dev`). `node_modules` 동기화 때문에 느려진다.
+
+> **키 받는 법:** Supabase 프로젝트에 팀원으로 초대받은 뒤 대시보드 Project Settings → API 에서 각자 복사한다. `SUPABASE_SERVICE_ROLE_KEY`는 DB 전체 권한이라 단톡방에 붙이지 않는다. 배포용 값은 Vercel 환경변수에만 넣는다.
 
 ## 작업 흐름
 
@@ -34,7 +36,7 @@ git push -u origin feat/phishing-swipe
 gh pr create --fill                   # 3. PR 열기 (또는 GitHub 웹에서)
 ```
 
-- **리뷰는 돌아가며:** A → B 코드, B → C 코드, C → A 코드.
+- **리뷰는 돌아가며:** 양동규(A) → 추현지(B) 코드, 추현지(B) → 권세현(C) 코드, 권세현(C) → 양동규(A) 코드. PR을 열면 `CODEOWNERS`가 리뷰어를 자동으로 지정한다.
 - PR을 열면 CI(lint · typecheck · build)가 자동으로 돈다. 빨간 X면 합칠 수 없다.
 - 합치기는 **Squash and merge** 하나만 켜져 있다. 합치면 브랜치는 자동 삭제.
 - **새 npm 패키지가 필요하면** 단톡방에 먼저 말하고, 그 PR에서만 설치한다 (`package-lock.json` 충돌 방지).
@@ -54,9 +56,9 @@ gh pr create --fill                   # 3. PR 열기 (또는 GitHub 웹에서)
 
 | 폴더                                                                                                 | 담당                       |
 | ---------------------------------------------------------------------------------------------------- | -------------------------- |
-| `src/games/phishing/` · `src/campus/Player.tsx` · `src/app/api/plays/`                               | A                          |
-| `src/games/microscope/` · `src/campus/Building.tsx`, `layout.json` · `src/app/api/result-card/`      | B                          |
-| `src/app/` 페이지들 · `src/games/registry.ts` · `src/campus/Scene.tsx` · `src/data/departments.json` | C                          |
+| `src/games/phishing/` · `src/campus/Player.tsx` · `src/app/api/plays/`                               | A 양동규                   |
+| `src/games/microscope/` · `src/campus/Building.tsx`, `layout.json` · `src/app/api/result-card/`      | B 추현지                   |
+| `src/app/` 페이지들 · `src/games/registry.ts` · `src/campus/Scene.tsx` · `src/data/departments.json` | C 권세현                   |
 | `src/games/types.ts`                                                                                 | 셋이 같이 (게임 공통 규칙) |
 
 ## AI 코딩 도구를 쓸 때

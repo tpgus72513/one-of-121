@@ -1,18 +1,326 @@
 [
   {
-    "id": "ai-cybersecurity",
-    "name": "인공지능사이버보안학과",
-    "college": "(확인)",
-    "buildingId": "(확인)",
-    "gameId": "phishing",
-    "status": "open"
+    "id": "korean-studies",
+    "name": "한국학전공",
+    "college": "글로벌비즈니스대학",
+    "division": "글로벌학부",
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "chinese-studies",
+    "name": "중국학전공",
+    "college": "글로벌비즈니스대학",
+    "division": "글로벌학부",
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "english-studies",
+    "name": "영미학전공",
+    "college": "글로벌비즈니스대학",
+    "division": "글로벌학부",
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "german-studies",
+    "name": "독일학전공",
+    "college": "글로벌비즈니스대학",
+    "division": "글로벌학부",
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "business",
+    "name": "경영학부",
+    "college": "글로벌비즈니스대학",
+    "division": null,
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "global-management",
+    "name": "글로벌경영전공",
+    "college": "글로벌비즈니스대학",
+    "division": "융합경영학부",
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "digital-management",
+    "name": "디지털경영전공",
+    "college": "글로벌비즈니스대학",
+    "division": "융합경영학부",
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "international-sports",
+    "name": "국제스포츠학부",
+    "college": "글로벌비즈니스대학",
+    "division": null,
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "public-administration",
+    "name": "정부행정학부",
+    "college": "공공정책대학",
+    "division": null,
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "public-sociology",
+    "name": "공공사회학전공",
+    "college": "공공정책대학",
+    "division": "공공사회·통일외교학부",
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "unification-diplomacy",
+    "name": "통일외교안보전공",
+    "college": "공공정책대학",
+    "division": "공공사회·통일외교학부",
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "economics",
+    "name": "경제학전공",
+    "college": "공공정책대학",
+    "division": "경제통계학부",
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "national-statistics",
+    "name": "국가통계전공",
+    "college": "공공정책대학",
+    "division": "경제통계학부",
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "big-data",
+    "name": "빅데이터응용학과",
+    "college": "공공정책대학",
+    "division": null,
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "archaeology-art-history",
+    "name": "고고미술사학전공",
+    "college": "문화스포츠대학",
+    "division": "문화유산융합학부",
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "cultural-heritage",
+    "name": "문화유산학전공",
+    "college": "문화스포츠대학",
+    "division": "문화유산융합학부",
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "media-creative-writing",
+    "name": "미디어문예창작전공",
+    "college": "문화스포츠대학",
+    "division": "문화창의학부",
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "cultural-contents",
+    "name": "문화콘텐츠전공",
+    "college": "문화스포츠대학",
+    "division": "문화창의학부",
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "sports-science",
+    "name": "스포츠과학과",
+    "college": "문화스포츠대학",
+    "division": null,
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "sports-security",
+    "name": "스포츠시큐리티학과",
+    "college": "문화스포츠대학",
+    "division": null,
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "display-semiconductor-physics",
+    "name": "디스플레이·반도체물리학과",
+    "college": "과학기술대학",
+    "division": null,
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "materials-chemistry",
+    "name": "신소재화학과",
+    "college": "과학기술대학",
+    "division": null,
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "computer-software",
+    "name": "컴퓨터소프트웨어학과",
+    "college": "과학기술대학",
+    "division": null,
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "data-computational-science",
+    "name": "데이터계산과학과",
+    "college": "과학기술대학",
+    "division": null,
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "cybersecurity",
+    "name": "사이버보안전공",
+    "college": "과학기술대학",
+    "division": null,
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "electro-mechanical",
+    "name": "전자·기계융합공학과",
+    "college": "과학기술대학",
+    "division": null,
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "bioinformatics",
+    "name": "생명정보공학과",
+    "college": "과학기술대학",
+    "division": null,
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
   },
   {
     "id": "food-biotech",
     "name": "식품생명공학과",
-    "college": "(확인)",
-    "buildingId": "(확인)",
+    "college": "과학기술대학",
+    "division": null,
+    "buildingId": null,
     "gameId": "microscope",
+    "status": "open"
+  },
+  {
+    "id": "electronics-info",
+    "name": "전자 및 정보공학과",
+    "college": "과학기술대학",
+    "division": null,
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "environmental-systems",
+    "name": "환경시스템공학과",
+    "college": "과학기술대학",
+    "division": null,
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "intelligent-semiconductor",
+    "name": "지능형반도체공학과",
+    "college": "과학기술대학",
+    "division": null,
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "future-mobility",
+    "name": "미래모빌리티학과",
+    "college": "과학기술대학",
+    "division": null,
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "pharmacy",
+    "name": "약학과",
+    "college": "약학대학",
+    "division": null,
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "smart-city",
+    "name": "스마트도시학부",
+    "college": "스마트도시학부",
+    "division": null,
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "free-major",
+    "name": "자유전공학부",
+    "college": "독립학부",
+    "division": null,
+    "buildingId": null,
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "ai-cybersecurity",
+    "name": "인공지능사이버보안학과",
+    "college": "독립학부",
+    "division": null,
+    "buildingId": null,
+    "gameId": "phishing",
     "status": "open"
   }
 ]
