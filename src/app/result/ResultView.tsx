@@ -38,7 +38,9 @@ function ResultCard({ result: initial }: { result: LastResult }) {
   const [notice, setNotice] = useState("");
 
   // AI 문구 받아오기 (B의 API). 실패하면 fetchCard 가 기본 문구를 돌려준다
+  // 이미 받았으면 다시 안 받는다 — 숨겼다 다시 보일 때(Activity) 문구가 바뀌거나 AI 요금이 또 나가지 않게
   useEffect(() => {
+    if (card) return;
     let cancelled = false;
     const profile = loadProfile();
     fetchCard(
@@ -57,7 +59,7 @@ function ResultCard({ result: initial }: { result: LastResult }) {
     return () => {
       cancelled = true;
     };
-  }, [result, name]);
+  }, [card, result, name]);
 
   const shown = card ?? fallbackCard(name, result.score);
 

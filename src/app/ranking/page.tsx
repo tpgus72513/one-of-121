@@ -86,10 +86,8 @@ async function RankingTables() {
         ) : (
           <ol className="flex flex-col divide-y divide-black/10 rounded-2xl border border-black/15 bg-white">
             {top.data.map((p, i) => (
-              <li
-                key={`${p.nickname}-${p.real_dept}`}
-                className="flex items-center gap-3 px-4 py-2.5"
-              >
+              // 순위 = 자리 고정이라 i 로 충분 (닉네임-학과 조합은 하이픈 때문에 겹칠 수 있다)
+              <li key={i} className="flex items-center gap-3 px-4 py-2.5">
                 <span className="w-6 font-bold tabular-nums">{i + 1}</span>
                 <span className="min-w-0 flex-1">
                   <span className="block truncate font-semibold">{p.nickname}</span>
