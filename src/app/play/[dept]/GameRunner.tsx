@@ -87,6 +87,8 @@ export default function GameRunner({ deptId, gameId }: GameRunnerProps) {
           playMs,
           detail: detail ?? null,
         }),
+        // 서버가 멈춰도 "저장 중…"에 갇히지 않게 6초 뒤 포기 → 결과는 그대로 보여준다
+        signal: AbortSignal.timeout(6000),
       });
       saved = res.ok;
       if (!res.ok) console.warn("[GameRunner] 저장 실패", res.status, await res.text());
