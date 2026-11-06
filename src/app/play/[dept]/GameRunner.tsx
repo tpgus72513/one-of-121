@@ -94,7 +94,7 @@ export default function GameRunner({ deptId, gameId }: GameRunnerProps) {
       console.warn("[GameRunner] 저장 요청 실패", e);
     }
 
-    saveLastResult({ deptId, gameId, score, detail: detail ?? null, saved });
+    saveLastResult({ deptId, gameId, score, detail: detail ?? null, saved, at: Date.now() });
     router.push("/result");
   }
 
