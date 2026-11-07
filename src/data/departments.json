@@ -4,7 +4,7 @@
     "name": "한국학전공",
     "college": "글로벌비즈니스대학",
     "division": "글로벌학부",
-    "buildingId": null,
+    "buildingId": "seokwon",
     "gameId": null,
     "status": "soon"
   },
@@ -13,7 +13,7 @@
     "name": "중국학전공",
     "college": "글로벌비즈니스대학",
     "division": "글로벌학부",
-    "buildingId": null,
+    "buildingId": "seokwon",
     "gameId": null,
     "status": "soon"
   },
@@ -22,7 +22,7 @@
     "name": "영미학전공",
     "college": "글로벌비즈니스대학",
     "division": "글로벌학부",
-    "buildingId": null,
+    "buildingId": "seokwon",
     "gameId": null,
     "status": "soon"
   },
@@ -31,7 +31,7 @@
     "name": "독일학전공",
     "college": "글로벌비즈니스대학",
     "division": "글로벌학부",
-    "buildingId": null,
+    "buildingId": "seokwon",
     "gameId": null,
     "status": "soon"
   },
@@ -40,7 +40,7 @@
     "name": "경영학부",
     "college": "글로벌비즈니스대학",
     "division": null,
-    "buildingId": null,
+    "buildingId": "seokwon",
     "gameId": null,
     "status": "soon"
   },
@@ -49,7 +49,7 @@
     "name": "글로벌경영전공",
     "college": "글로벌비즈니스대학",
     "division": "융합경영학부",
-    "buildingId": null,
+    "buildingId": "seokwon",
     "gameId": null,
     "status": "soon"
   },
@@ -58,7 +58,16 @@
     "name": "디지털경영전공",
     "college": "글로벌비즈니스대학",
     "division": "융합경영학부",
-    "buildingId": null,
+    "buildingId": "seokwon",
+    "gameId": null,
+    "status": "soon"
+  },
+  {
+    "id": "standards-knowledge",
+    "name": "표준·지식학과",
+    "college": "글로벌비즈니스대학",
+    "division": null,
+    "buildingId": "seokwon",
     "gameId": null,
     "status": "soon"
   },
@@ -67,7 +76,7 @@
     "name": "국제스포츠학부",
     "college": "글로벌비즈니스대학",
     "division": null,
-    "buildingId": null,
+    "buildingId": "culture-sports",
     "gameId": null,
     "status": "soon"
   },
@@ -76,7 +85,7 @@
     "name": "정부행정학부",
     "college": "공공정책대학",
     "division": null,
-    "buildingId": null,
+    "buildingId": "public-policy",
     "gameId": null,
     "status": "soon"
   },
@@ -85,7 +94,7 @@
     "name": "공공사회학전공",
     "college": "공공정책대학",
     "division": "공공사회·통일외교학부",
-    "buildingId": null,
+    "buildingId": "public-policy",
     "gameId": null,
     "status": "soon"
   },
@@ -94,7 +103,7 @@
     "name": "통일외교안보전공",
     "college": "공공정책대학",
     "division": "공공사회·통일외교학부",
-    "buildingId": null,
+    "buildingId": "public-policy",
     "gameId": null,
     "status": "soon"
   },
@@ -103,7 +112,7 @@
     "name": "경제학전공",
     "college": "공공정책대학",
     "division": "경제통계학부",
-    "buildingId": null,
+    "buildingId": "public-policy",
     "gameId": null,
     "status": "soon"
   },
@@ -112,7 +121,7 @@
     "name": "국가통계전공",
     "college": "공공정책대학",
     "division": "경제통계학부",
-    "buildingId": null,
+    "buildingId": "public-policy",
     "gameId": null,
     "status": "soon"
   },
@@ -121,7 +130,7 @@
     "name": "빅데이터응용학과",
     "college": "공공정책대학",
     "division": null,
-    "buildingId": null,
+    "buildingId": "public-policy",
     "gameId": null,
     "status": "soon"
   },
@@ -130,7 +139,7 @@
     "name": "고고미술사학전공",
     "college": "문화스포츠대학",
     "division": "문화유산융합학부",
-    "buildingId": null,
+    "buildingId": "culture-fusion",
     "gameId": null,
     "status": "soon"
   },
@@ -139,7 +148,7 @@
     "name": "문화유산학전공",
     "college": "문화스포츠대학",
     "division": "문화유산융합학부",
-    "buildingId": null,
+    "buildingId": "culture-fusion",
     "gameId": null,
     "status": "soon"
   },
@@ -148,7 +157,7 @@
     "name": "미디어문예창작전공",
     "college": "문화스포츠대학",
     "division": "문화창의학부",
-    "buildingId": null,
+    "buildingId": "culture-sports",
     "gameId": null,
     "status": "soon"
   },
@@ -157,7 +166,7 @@
     "name": "문화콘텐츠전공",
     "college": "문화스포츠대학",
     "division": "문화창의학부",
-    "buildingId": null,
+    "buildingId": "culture-sports",
     "gameId": null,
     "status": "soon"
   },
@@ -166,7 +175,7 @@
     "name": "스포츠과학과",
     "college": "문화스포츠대학",
     "division": null,
-    "buildingId": null,
+    "buildingId": "culture-sports",
     "gameId": null,
     "status": "soon"
   },
@@ -175,7 +184,7 @@
     "name": "스포츠시큐리티학과",
     "college": "문화스포츠대학",
     "division": null,
-    "buildingId": null,
+    "buildingId": "culture-sports",
     "gameId": null,
     "status": "soon"
   },
@@ -184,7 +193,7 @@
     "name": "디스플레이·반도체물리학과",
     "college": "과학기술대학",
     "division": null,
-    "buildingId": null,
+    "buildingId": "accel-ict",
     "gameId": null,
     "status": "soon"
   },
@@ -193,7 +202,7 @@
     "name": "신소재화학과",
     "college": "과학기술대학",
     "division": null,
-    "buildingId": null,
+    "buildingId": "sci-tech-2",
     "gameId": null,
     "status": "soon"
   },
@@ -202,7 +211,7 @@
     "name": "컴퓨터소프트웨어학과",
     "college": "과학기술대학",
     "division": null,
-    "buildingId": null,
+    "buildingId": "sci-tech-2",
     "gameId": null,
     "status": "soon"
   },
@@ -211,7 +220,7 @@
     "name": "데이터계산과학과",
     "college": "과학기술대학",
     "division": null,
-    "buildingId": null,
+    "buildingId": "sci-tech-2",
     "gameId": null,
     "status": "soon"
   },
@@ -220,7 +229,7 @@
     "name": "전자·기계융합공학과",
     "college": "과학기술대학",
     "division": null,
-    "buildingId": null,
+    "buildingId": "sci-tech-1",
     "gameId": null,
     "status": "soon"
   },
@@ -229,7 +238,7 @@
     "name": "생명정보공학과",
     "college": "과학기술대학",
     "division": null,
-    "buildingId": null,
+    "buildingId": "industry",
     "gameId": null,
     "status": "soon"
   },
@@ -238,7 +247,7 @@
     "name": "식품생명공학과",
     "college": "과학기술대학",
     "division": null,
-    "buildingId": null,
+    "buildingId": "industry",
     "gameId": "microscope",
     "status": "open"
   },
@@ -247,7 +256,7 @@
     "name": "전자 및 정보공학과",
     "college": "과학기술대학",
     "division": null,
-    "buildingId": null,
+    "buildingId": "sci-tech-1",
     "gameId": null,
     "status": "soon"
   },
@@ -256,7 +265,7 @@
     "name": "환경시스템공학과",
     "college": "과학기술대학",
     "division": null,
-    "buildingId": null,
+    "buildingId": "sci-tech-1",
     "gameId": null,
     "status": "soon"
   },
@@ -265,7 +274,7 @@
     "name": "지능형반도체공학과",
     "college": "과학기술대학",
     "division": null,
-    "buildingId": null,
+    "buildingId": "sci-tech-1",
     "gameId": null,
     "status": "soon"
   },
@@ -274,7 +283,7 @@
     "name": "미래모빌리티학과",
     "college": "과학기술대학",
     "division": null,
-    "buildingId": null,
+    "buildingId": "industry",
     "gameId": null,
     "status": "soon"
   },
@@ -283,7 +292,7 @@
     "name": "약학과",
     "college": "약학대학",
     "division": null,
-    "buildingId": null,
+    "buildingId": "sci-tech-2",
     "gameId": null,
     "status": "soon"
   },
@@ -292,16 +301,7 @@
     "name": "스마트도시학부",
     "college": "스마트도시학부",
     "division": null,
-    "buildingId": null,
-    "gameId": null,
-    "status": "soon"
-  },
-  {
-    "id": "free-major",
-    "name": "자유전공학부",
-    "college": "독립학부",
-    "division": null,
-    "buildingId": null,
+    "buildingId": "sci-tech-1",
     "gameId": null,
     "status": "soon"
   },
@@ -310,7 +310,7 @@
     "name": "인공지능사이버보안학과",
     "college": "독립학부",
     "division": null,
-    "buildingId": null,
+    "buildingId": "sci-tech-2",
     "gameId": "phishing",
     "status": "open"
   }

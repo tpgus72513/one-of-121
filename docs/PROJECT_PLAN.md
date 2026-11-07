@@ -313,7 +313,7 @@ create table plays (
 2. 식품 게임: **식중독균 찾기(추천)** vs 발효 컨트롤 vs 위생 점검관
 3. ~~역할표의 A·B·C에 누구를 넣을지~~ → A 양동규 · B 추현지 · C 권세현 (11/4 확정)
 4. ERICA 지원 여부 (마감 11/1)
-5. ~~세종캠 학과 전체 목록~~ → `departments.json`에 35개 입력 (11/4 · 사이버보안전공 = 인공지능사이버보안학과로 합침) · 각 학과 건물은 아직 확인 필요
+5. ~~세종캠 학과 전체 목록 · 학과별 건물~~ → `departments.json`에 35개 + `buildingId` 입력 (11/7 · 학과 홈페이지 사무실 주소 기준, 팀 확인). 건물 8동: `sci-tech-1` 과학기술1관 · `sci-tech-2` 과학기술2관 · `industry` 산학협력관 · `accel-ict` 가속기ICT융합관 · `seokwon` 석원경상관 · `public-policy` 공공정책관 · `culture-sports` 문화스포츠관 · `culture-fusion` 문화융합관
 6. 팀 이름 정하기
 
 ---
