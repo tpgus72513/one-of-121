@@ -216,15 +216,6 @@
     "status": "soon"
   },
   {
-    "id": "cybersecurity",
-    "name": "사이버보안전공",
-    "college": "과학기술대학",
-    "division": null,
-    "buildingId": null,
-    "gameId": null,
-    "status": "soon"
-  },
-  {
     "id": "electro-mechanical",
     "name": "전자·기계융합공학과",
     "college": "과학기술대학",
