@@ -39,6 +39,8 @@ export default function PhishingGame({ onFinish }: GameProps) {
   const [feedback, setFeedback] = useState<Feedback | null>(null); // 답하면 잠깐 뜨는 한마디
   // onFinish 를 두 번 부르지 않도록 기억. 화면과 상관없어서 ref.
   const finished = useRef(false);
+  // 게임이 끝나는 시각(ms). 남은 시간은 매번 이걸로 다시 계산한다
+  const endsAt = useRef(0);
 
   const card = deck[index];
 
@@ -51,6 +53,7 @@ export default function PhishingGame({ onFinish }: GameProps) {
     setStreak(0);
     setBestStreak(0);
     setTimeLeft(DURATION_SEC);
+    endsAt.current = Date.now() + DURATION_SEC * 1000;
     setPhase("playing");
   }
 
@@ -74,18 +77,16 @@ export default function PhishingGame({ onFinish }: GameProps) {
   // ③ useEffect: 화면 밖의 일(타이머·키보드)을 붙였다 떼기
   // 공통 모양: 시작하는 코드 → return 으로 "정리하는 코드". 정리 안 하면 타이머가 계속 돈다.
 
-  // 1초마다 timeLeft 를 1씩 줄이고, 0이 되면 해설 화면으로
+  // 남은 시간 = 끝나는 시각 - 지금. 0이 되면 해설 화면으로
+  // (1초마다 1씩 빼는 방식은 setInterval 이 늦게 불리면(백그라운드 탭 등) 실제보다 길어진다)
+  // setTimeLeft 의 업데이트 함수 안에서 setPhase 를 부르지 않고, 둘을 나란히 부른다 (리뷰 반영)
   useEffect(() => {
     if (phase !== "playing") return;
     const timer = setInterval(() => {
-      setTimeLeft((t) => {
-        if (t <= 1) {
-          setPhase("review");
-          return 0;
-        }
-        return t - 1;
-      });
-    }, 1000);
+      const left = Math.max(0, Math.ceil((endsAt.current - Date.now()) / 1000));
+      setTimeLeft(left); // 값이 같으면 React 가 다시 그리지 않는다
+      if (left === 0) setPhase("review");
+    }, 250);
     return () => clearInterval(timer);
   }, [phase]);
 
