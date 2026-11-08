@@ -29,8 +29,15 @@ function saveSeen(ids: string[]) {
 }
 
 // 배열 순서를 무작위로 섞는다. 원본은 건드리지 않고 복사본을 섞는다.
+// Fisher–Yates: 뒤에서부터 한 칸씩, 아직 안 정한 칸 중 하나와 자리를 바꾼다.
+// sort(() => Math.random() - 0.5) 는 앞쪽 카드가 덜 섞이는 치우침이 있어서 바꿨다 (리뷰 반영)
 function shuffle(list: Message[]): Message[] {
-  return [...list].sort(() => Math.random() - 0.5);
+  const out = [...list];
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
 }
 
 // 한 판에 쓸 카드 뽑기.
