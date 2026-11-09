@@ -492,6 +492,66 @@
   color: #7b846e;
   font-size: 15px;
 }
+.resultCard {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #abc198;
+  border-radius: 14px;
+  background: #eef2dc;
+  text-align: left;
+}
+.cardSource {
+  display: inline-block;
+  padding: 4px 7px;
+  border-radius: 5px;
+  background: #dbe7c2;
+  color: #63804d;
+  font-size: 9px;
+  font-weight: 700;
+}
+.resultCard h3 {
+  margin: 12px 0 10px;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.55;
+  letter-spacing: -0.05em;
+  word-break: keep-all;
+}
+.resultCard p {
+  color: #637357;
+  font-size: 12px;
+  line-height: 1.9;
+  word-break: keep-all;
+}
+.cardKeywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 15px;
+}
+.cardKeywords > span {
+  padding: 5px 8px;
+  border: 1px solid #bbcca7;
+  border-radius: 100px;
+  background: #fafcf1;
+  color: #62834b;
+  font-size: 10px;
+}
+.resultCard small {
+  display: block;
+  margin-top: 16px;
+  color: #8d987d;
+  font-size: 9px;
+}
+.retryCardButton {
+  margin-top: 12px;
+  padding: 8px 11px;
+  border: 1px solid #a6bb90;
+  border-radius: 6px;
+  background: #fffef3;
+  color: #4a713d;
+  font-size: 11px;
+}
 .summary {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -1,4 +1,10 @@
-// 담당: B · LLM으로 결과 카드 문구 생성. 실패하면 기본 문구를 돌려준다. (API 키는 서버에서만)
-export async function POST() {
-  return Response.json({ error: "not implemented" }, { status: 501 });
+import "server-only";
+import { handleResultCard } from "./service";
+
+// 담당: B · API 키는 이 서버 진입점에서만 읽는다.
+export async function POST(request: Request) {
+  return handleResultCard(request, {
+    apiKey: process.env.LLM_API_KEY,
+    model: process.env.LLM_MODEL,
+  });
 }

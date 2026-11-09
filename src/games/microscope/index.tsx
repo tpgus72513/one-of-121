@@ -3,6 +3,7 @@
 import { useEffect, useReducer, useRef, useState } from "react";
 import type { GameProps } from "../types";
 import Scope, { Microbe } from "./Scope";
+import ResultCardPreview from "./ResultCardPreview";
 import {
   DURATION_SEC,
   gameReducer,
@@ -275,6 +276,12 @@ export default function MicroscopeGame({ onFinish }: GameProps) {
             <strong>{score}</strong>
             <span>/ 100점</span>
           </div>
+          <ResultCardPreview
+            score={score}
+            correct={state.foundIds.length}
+            total={TOTAL_TARGETS}
+            mistakes={state.mistakes}
+          />
           <dl className={styles.summary}>
             <div>
               <dt>발견한 균</dt>
