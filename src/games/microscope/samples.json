@@ -1,0 +1,48 @@
+[
+  {
+    "id": "sample-a",
+    "name": "시료 A",
+    "targetName": "대장균",
+    "hint": "초록색 짧은 막대 모양을 찾아요.",
+    "targetShape": "rod",
+    "focus": 68,
+    "initialFocus": 18,
+    "particles": [
+      { "id": "a1", "x": 26, "y": 30, "angle": -25, "shape": "rod", "target": true },
+      { "id": "a2", "x": 60, "y": 22, "angle": 30, "shape": "rod", "target": true },
+      { "id": "a3", "x": 45, "y": 48, "angle": -55, "shape": "rod", "target": true },
+      { "id": "a4", "x": 72, "y": 59, "angle": 20, "shape": "rod", "target": true },
+      { "id": "a5", "x": 34, "y": 73, "angle": 55, "shape": "rod", "target": true },
+      { "id": "a6", "x": 41, "y": 22, "angle": 0, "shape": "round", "target": false },
+      { "id": "a7", "x": 20, "y": 51, "angle": 30, "shape": "fiber", "target": false },
+      { "id": "a8", "x": 71, "y": 39, "angle": 0, "shape": "round", "target": false },
+      { "id": "a9", "x": 55, "y": 76, "angle": -30, "shape": "fiber", "target": false },
+      { "id": "a10", "x": 59, "y": 54, "angle": 0, "shape": "round", "target": false },
+      { "id": "a11", "x": 42, "y": 65, "angle": 0, "shape": "round", "target": false },
+      { "id": "a12", "x": 53, "y": 35, "angle": 20, "shape": "fiber", "target": false }
+    ]
+  },
+  {
+    "id": "sample-b",
+    "name": "시료 B",
+    "targetName": "살모넬라",
+    "hint": "분홍색 꼬리 달린 막대 모양을 찾아요.",
+    "targetShape": "tailed",
+    "focus": 34,
+    "initialFocus": 82,
+    "particles": [
+      { "id": "b1", "x": 37, "y": 22, "angle": 25, "shape": "tailed", "target": true },
+      { "id": "b2", "x": 67, "y": 35, "angle": -30, "shape": "tailed", "target": true },
+      { "id": "b3", "x": 25, "y": 53, "angle": 60, "shape": "tailed", "target": true },
+      { "id": "b4", "x": 62, "y": 64, "angle": -20, "shape": "tailed", "target": true },
+      { "id": "b5", "x": 42, "y": 78, "angle": 30, "shape": "tailed", "target": true },
+      { "id": "b6", "x": 55, "y": 22, "angle": 0, "shape": "round", "target": false },
+      { "id": "b7", "x": 27, "y": 36, "angle": -30, "shape": "fiber", "target": false },
+      { "id": "b8", "x": 48, "y": 43, "angle": 0, "shape": "round", "target": false },
+      { "id": "b9", "x": 77, "y": 54, "angle": 35, "shape": "fiber", "target": false },
+      { "id": "b10", "x": 42, "y": 61, "angle": 0, "shape": "round", "target": false },
+      { "id": "b11", "x": 60, "y": 81, "angle": 0, "shape": "round", "target": false },
+      { "id": "b12", "x": 53, "y": 54, "angle": -10, "shape": "fiber", "target": false }
+    ]
+  }
+]
