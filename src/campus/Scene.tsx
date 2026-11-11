@@ -1,6 +1,6 @@
 "use client";
 
-import { Grid, OrbitControls } from "@react-three/drei";
+import { Grid } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import type { ReactNode } from "react";
 
@@ -62,10 +62,6 @@ export default function Scene({ children }: { children?: ReactNode }) {
       />
 
       {children}
-
-      {/* 임시: 캐릭터(A)가 생기기 전까지 마우스·손가락으로 둘러보기.
-          Player 가 카메라를 따라가게 되면 지운다. 땅 밑으로는 못 내려가게 각도 제한 */}
-      <OrbitControls maxPolarAngle={Math.PI / 2.2} minDistance={5} maxDistance={100} />
     </Canvas>
   );
 }
